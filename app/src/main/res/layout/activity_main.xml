@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/medium"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/xLarge"
+            android:text="@string/company_name"
+            android:paddingHorizontal="@dimen/large"
+            android:alpha=".9"
+            android:background="@color/colorPrimary"
+            android:textSize="@dimen/xlarge_text" />
+
+        <EditText
+            android:id="@+id/name_field"
+            android:layout_width="@dimen/standard_button_width"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/medium"
+            android:textColorHint="@color/colorWhite"
+            android:alpha=".9"
+            android:hint="@string/hint_text"
+            android:inputType="textCapWords" />
+
+        <TextView
+            android:id="@+id/type_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/medium"
+            android:text="@string/type"
+            android:textAllCaps="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/americano_button_view"
+                android:layout_width="@dimen/type_button_width"
+                android:layout_height="@dimen/type_button_height"
+                android:alpha=".9"
+                android:layout_weight="1"
+                android:onClick="americano"
+                android:textSize="@dimen/small_text"
+                android:text="@string/americano_type" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/latte_button_view"
+                android:layout_width="@dimen/type_button_width"
+                android:layout_height="@dimen/type_button_height"
+                android:layout_marginHorizontal="@dimen/xsmall"
+                android:layout_weight="1"
+                android:alpha=".9"
+                android:textSize="@dimen/small_text"
+                android:onClick="latte"
+                android:text="@string/latte_type" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/mocha_button_view"
+                android:layout_width="@dimen/type_button_width"
+                android:layout_height="@dimen/type_button_height"
+                android:alpha=".9"
+                android:textSize="@dimen/small_text"
+                android:layout_weight="1"
+                android:onClick="mocha"
+                android:text="@string/mocha_type" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/medium"
+            android:text="@string/toppings"
+            android:textAllCaps="true" />
+
+        <CheckBox
+            android:id="@+id/whipped_cream_checkbox"
+            android:layout_width="@dimen/standard_button_width"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/medium"
+            android:background="@color/colorPrimary"
+            android:paddingLeft="@dimen/checkbox_padding"
+            android:text="Whipped Cream"
+            android:alpha=".9"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/medium_text" />
+
+        <CheckBox
+            android:id="@+id/chocolate_checkbox"
+            android:layout_width="@dimen/standard_button_width"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/medium"
+            android:background="@color/colorPrimary"
+            android:paddingLeft="@dimen/checkbox_padding"
+            android:text="Chocolate"
+            android:alpha=".9"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/medium_text" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/medium"
+            android:text="@string/quantity"
+            android:textAllCaps="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="@dimen/square_button"
+                android:layout_height="@dimen/square_button"
+                android:onClick="decrement"
+                android:alpha=".9"
+                android:text="@string/decrement" />
+
+            <TextView
+                android:id="@+id/quantity_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/medium"
+                android:text="@string/start_quantity" />
+
+            <Button
+                android:layout_width="@dimen/square_button"
+                android:layout_height="@dimen/square_button"
+                android:onClick="increment"
+                android:alpha=".9"
+                android:text="@string/increment" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="@dimen/standard_button_width"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/large"
+            android:onClick="submitOrder"
+            android:alpha=".9"
+            android:text="@string/order"
+            android:backgroundTint="@color/colorAccent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/company_slogan"
+            android:layout_marginBottom="@dimen/large"
+            android:textSize="@dimen/small_text" />
+
+    </LinearLayout>
+
+</ScrollView>
+
+

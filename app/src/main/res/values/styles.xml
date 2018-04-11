@@ -5,16 +5,48 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textSize">@dimen/large_text</item>
         <item name="android:textColor">@color/colorWhite</item>
-        <item name="android:editTextColor">@color/colorWhite</item>
-        <item name="android:textColorSecondary">@color/colorWhite</item>
-        <item name="android:textColorTertiary">@color/colorWhite</item>
-        <item name="android:textColorPrimaryInverse">@color/colorWhite</item>
-        <item name="android:textColorSecondaryInverse">@color/colorWhite</item>
-        <item name="android:textColorTertiaryInverse">@color/colorWhite</item>
-        <item name="android:colorButtonNormal">@color/colorPrimary</item>
-        <item name="android:editTextBackground">@color/colorPrimary</item>
+    </style>
+
+    <style name="TextViewMain">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:alpha">@dimen/alpha_amount</item>
+    </style>
+
+    <style name="TextViewTitle">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:alpha">@dimen/alpha_amount</item>
+        <item name="android:textSize">@dimen/xlarge_text</item>
+    </style>
+
+    <style name="TextViewLarge">
+        <item name="android:textSize">@dimen/large_text</item>
+    </style>
+
+    <style name="CheckBoxMain">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:alpha">@dimen/alpha_amount</item>
+        <item name="android:textSize">@dimen/medium_text</item>
+        <item name="android:buttonTint">@color/colorWhite</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="EditTextMain">
+        <item name="android:textColorHint">@color/colorWhite</item>
+        <item name="android:alpha">@dimen/alpha_amount</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="ButtonSelection">
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:alpha">@dimen/alpha_amount</item>
+    </style>
+
+    <style name="ButtonAlt">
+        <item name="android:backgroundTint">@color/colorAccent</item>
+        <item name="android:alpha">@dimen/alpha_amount</item>
+        <item name="android:textColor">@color/colorWhite</item>
     </style>
 </resources>
 

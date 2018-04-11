@@ -1,5 +1,5 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">JavaBasic</string>
+    <string name="app_name">JustJava</string>
     <!--Company name. [CHAR LIMIT=NONE] -->
     <string name="company_name">MY Coffee House</string>
     <!--Company slogan. [CHAR LIMIT=NONE] -->
@@ -55,6 +55,11 @@
     <string name="no_name">Please enter a name</string>
     <string name="no_type">Please select a type</string>
     <string name="email_subject">Just Java Order for\u0020</string>
+    <string name="ameri_cost_toast">$3 per cup</string>
+    <string name="latte_cost_toast">$6 per cup</string>
+    <string name="mocha_cost_toast">$7 per cup</string>
+    <string name="cream_cost_toast">Add $1 per cup</string>
+    <string name="choco_cost_toast">Add $2 per cup</string>
 </resources>
 
 

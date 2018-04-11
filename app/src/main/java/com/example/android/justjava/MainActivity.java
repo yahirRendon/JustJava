@@ -40,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
     ColorStateList btnHighlight; //Adjust question 4 True/False Button
     ColorStateList btnPrimaryBackground; //Adjust question 4 True/False Button
     TextView quantityTextView; //Quantity TextView
+    CheckBox whippedCreamCheckBox; //Whipped cream CheckBox
+    CheckBox chocolateCheckBox; //Chocolate CheckBox
+    boolean hasWhippedCream; //Check if whipped cream is checked
+    boolean hasChocolate; //Check if chocolate is checked
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
         btnHighlight = AppCompatResources.getColorStateList(getApplicationContext(), R.color.colorAccent);
         btnPrimaryBackground = AppCompatResources.getColorStateList(getApplicationContext(), R.color.colorPrimary);
         quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
+        whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
+        chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
     }
 
     /**
@@ -106,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
         ViewCompat.setBackgroundTintList(ameriButton, btnHighlight);
         ViewCompat.setBackgroundTintList(latteButton, btnPrimaryBackground);
         ViewCompat.setBackgroundTintList(mochaButton, btnPrimaryBackground);
+        Toast.makeText(getBaseContext(), R.string.ameri_cost_toast, Toast.LENGTH_SHORT).show();
 
     }
 
@@ -119,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
         ViewCompat.setBackgroundTintList(ameriButton, btnPrimaryBackground);
         ViewCompat.setBackgroundTintList(latteButton, btnHighlight);
         ViewCompat.setBackgroundTintList(mochaButton, btnPrimaryBackground);
+        Toast.makeText(getBaseContext(), R.string.latte_cost_toast, Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -131,6 +139,27 @@ public class MainActivity extends AppCompatActivity {
         ViewCompat.setBackgroundTintList(ameriButton, btnPrimaryBackground);
         ViewCompat.setBackgroundTintList(latteButton, btnPrimaryBackground);
         ViewCompat.setBackgroundTintList(mochaButton, btnHighlight);
+        Toast.makeText(getBaseContext(), R.string.mocha_cost_toast, Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * This method is called when the whipped cream check box is clicked.
+     */
+    public void addWhippedCream(View view) {
+        hasWhippedCream = whippedCreamCheckBox.isChecked();
+        if(hasWhippedCream) {
+            Toast.makeText(getBaseContext(), R.string.cream_cost_toast, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /**
+     * This method is called when the chocolate check box is clicked.
+     */
+    public void addChocolate(View view) {
+        hasChocolate = chocolateCheckBox.isChecked();
+        if(hasChocolate) {
+            Toast.makeText(getBaseContext(), R.string.choco_cost_toast, Toast.LENGTH_SHORT).show();
+        }
     }
 
 
@@ -149,11 +178,9 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, R.string.no_type, Toast.LENGTH_SHORT).show();
         } else {
             //Figure out if the user wants whippped cream topping
-            CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
-            boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
+            hasWhippedCream = whippedCreamCheckBox.isChecked();
             //Figure out if the user wants chocolate topping
-            CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
-            boolean hasChocolate = chocolateCheckBox.isChecked();
+            hasChocolate = chocolateCheckBox.isChecked();
 
             //Prepare order summary
             int price = calculatePrice(hasWhippedCream, hasChocolate);

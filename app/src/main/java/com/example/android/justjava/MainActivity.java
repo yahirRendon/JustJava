@@ -27,6 +27,10 @@ import java.text.NumberFormat;
  */
 public class MainActivity extends AppCompatActivity {
     int quantity = 2; //Track quantity
+    int basePrice; //Track the price of coffee alone
+    EditText nameField; //EditText field
+    String name; //Find the user's name
+    String priceMessage; //Used to update order message
     boolean americano = false; //Determine type of coffee
     boolean latte = false; //Determine type of coffee
     boolean mocha = false; //Determine type of coffee
@@ -35,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     Button mochaButton; //Mocha button
     ColorStateList btnHighlight; //Adjust question 4 True/False Button
     ColorStateList btnPrimaryBackground; //Adjust question 4 True/False Button
+    TextView quantityTextView; //Quantity TextView
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,12 +49,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getWindow().setBackgroundDrawableResource(R.drawable.coffee_table_cropped);
 
+        initializeViews();
 
+    }
+
+    /**
+     * This method is called on onCreate.
+     */
+    public void initializeViews() {
+        nameField = (EditText) findViewById(R.id.name_field);
         ameriButton = (Button) findViewById(R.id.americano_button_view);
         latteButton = (Button) findViewById(R.id.latte_button_view);
         mochaButton = (Button) findViewById(R.id.mocha_button_view);
         btnHighlight = AppCompatResources.getColorStateList(getApplicationContext(), R.color.colorAccent);
         btnPrimaryBackground = AppCompatResources.getColorStateList(getApplicationContext(), R.color.colorPrimary);
+        quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
     }
 
     /**
@@ -125,8 +139,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         //Find the user's name
-        EditText nameField = (EditText) findViewById(R.id.name_field);
-        String name = nameField.getText().toString();
+        name = nameField.getText().toString();
 
         //If name field is empty prompt toast to enter name
         //If type is not selected prompt toast  to select type
@@ -165,8 +178,6 @@ public class MainActivity extends AppCompatActivity {
      * @return total price
      */
     private int calculatePrice(boolean addWhippedCream, boolean addChocolate) {
-        int basePrice;
-
         //Price for 1 cup of coffee
         if(americano) {
             basePrice = 3;
@@ -201,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
      * @return text summary
      */
     private String createOrderSummary(String name, int price, boolean addWhippedCream, boolean addChocolate) {
-        String priceMessage = getString(R.string.order_summary_name, name);
+        priceMessage = getString(R.string.order_summary_name, name);
         if (americano) {
             priceMessage += "\n" + getString(R.string.americano_selected);
         } else if (latte) {
@@ -222,7 +233,6 @@ public class MainActivity extends AppCompatActivity {
      * This method displays the given quantity value on the screen.
      */
     private void displayQuantity(int value) {
-        TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + value);
     }
 

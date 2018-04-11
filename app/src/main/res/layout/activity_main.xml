@@ -92,7 +92,7 @@
             android:layout_marginBottom="@dimen/medium"
             android:background="@color/colorPrimary"
             android:paddingLeft="@dimen/checkbox_padding"
-            android:text="Whipped Cream"
+            android:text="@string/whipped_cream"
             android:alpha=".9"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/medium_text" />
@@ -104,7 +104,7 @@
             android:layout_marginBottom="@dimen/medium"
             android:background="@color/colorPrimary"
             android:paddingLeft="@dimen/checkbox_padding"
-            android:text="Chocolate"
+            android:text="@string/chocolate"
             android:alpha=".9"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/medium_text" />
